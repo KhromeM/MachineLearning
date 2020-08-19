@@ -85,7 +85,7 @@ def compute_cost(AL, Y):
 
     m = Y.shape[1]
 
-    cost = ((AL - Y)**2).mean(axis=1) #np.sum(((Y*np.log(AL)) + (1-Y) * np.log(1-AL))) * (-1/m)
+    cost = np.sum(((Y*np.log(AL)) + (1-Y) * np.log(1-AL))) * (-1/m)  #MSE ((AL - Y)**2).mean(axis=1) 
     
     cost = np.squeeze(cost)   
     
